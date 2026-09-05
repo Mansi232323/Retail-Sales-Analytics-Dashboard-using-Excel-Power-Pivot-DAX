@@ -340,6 +340,8 @@ The dashboard provides a set of high-level KPIs for quick business monitoring.
 
 These KPI cards provide management with an immediate overview of business performance.
 
+![DAX](Images/TASK16.png)
+
 ---
 
 # 📈 Dashboard Visualizations
@@ -419,6 +421,8 @@ This information can support sales forecasting, inventory planning, and promotio
 
 ---
 
+![DAX](Images/TASK18.png)
+
 # 🎛️ Interactive Dashboard Features
 
 The dashboard is designed as an interactive analytical reporting system.
@@ -428,8 +432,12 @@ The dashboard is designed as an interactive analytical reporting system.
 Users can dynamically filter the dashboard using:
 
 * **Channel**
-* **Month**
 * **Brand**
+* **State**
+* **Category**
+* **Sub-category**
+
+  ![sl](Images/TASK17.png)
 
 When a slicer selection is made, the connected PivotTables, PivotCharts, and KPI calculations update according to the selected context.
 

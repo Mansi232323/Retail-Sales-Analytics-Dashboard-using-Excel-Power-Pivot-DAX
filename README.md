@@ -203,6 +203,8 @@ Data Validation
 Load to Data Model
 ```
 
+![Power Query](Images/TASK3.png)
+
 ![Power Query](Images/TASK2.png)
 
 ---
@@ -223,6 +225,11 @@ When new transactions become available, the data can be added to the source tabl
 6. Refresh the PivotTables.
 7. Refresh the PivotCharts.
 8. Verify that the dashboard reflects the updated information.
+
+   
+![Power Query](Images/TASK14.png)
+
+![Power Query](Images/TASK15.png)
 
 ### Data Update Workflow
 

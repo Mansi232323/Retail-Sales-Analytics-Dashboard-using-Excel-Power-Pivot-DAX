@@ -167,7 +167,7 @@ The Date table enables monthly, quarterly, and yearly analysis.
 
 ---
 
-# 🔄 Power Query – Data Preparation
+# 🔄 Power Query Data Preparation
 
 **Power Query** was used to import, clean, transform, and prepare the raw data before loading it into the Power Pivot Data Model.
 

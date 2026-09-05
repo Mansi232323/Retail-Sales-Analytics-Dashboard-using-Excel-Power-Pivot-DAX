@@ -512,7 +512,7 @@ Supports sales planning, marketing decisions, inventory planning, channel strate
 
 
 
-![Retail Sales Analytics Dashboard](Images/TASK13.png)
+![Retail Sales Analytics Dashboard](Images/TASK 13.png)
 
 
 

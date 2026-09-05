@@ -73,6 +73,8 @@ The `Sales_Fact` table is the central **transaction/fact table** containing indi
 
 This table provides the numerical measures required for revenue, profit, order, and sales analysis.
 
+![S](Images/TASK7.png)
+
 ---
 
 ## 2. Customers
@@ -93,7 +95,7 @@ The `Customers` table contains customer-level information.
 
 This table supports customer segmentation and customer-level analysis.
 
-![Retail Sales Analytics Dashboard](Images/TASK4.png)
+![C](Images/TASK4.png)
 
 ---
 
@@ -108,9 +110,13 @@ The `Products` table contains product-related information.
 * `Brand`
 * `Category`
 
+
 It enables analysis of revenue and profitability by product, brand, and category.
 
+![C](Images/TASK6.png)
+
 ---
+
 
 ## 4. Stores
 
@@ -124,6 +130,8 @@ The `Stores` table contains information about stores and their associated channe
 * `Channel`
 
 This table is used for geographical and store/channel performance analysis.
+
+![C](Images/TASK5.png)
 
 ---
 
@@ -139,6 +147,8 @@ The `Date` table is the dedicated **Date Dimension** used for time-based analysi
 * `Year`
 
 It enables monthly, quarterly, and yearly trend analysis.
+
+![C](Images/TASK8.png)
 
 ---
 

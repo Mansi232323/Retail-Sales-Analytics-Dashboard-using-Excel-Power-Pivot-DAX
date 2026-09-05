@@ -512,8 +512,9 @@ Supports sales planning, marketing decisions, inventory planning, channel strate
 
 Add your dashboard screenshot here:
 
-```markdown
-![Retail Sales Analytics Dashboard](images/dashboard.png)
+
+![Retail Sales Analytics Dashboard](images/TASK13.png)
+
 ```
 
 The screenshot should showcase the complete dashboard, including KPI cards, charts, slicers, and overall dashboard layout.

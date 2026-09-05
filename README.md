@@ -93,6 +93,8 @@ The `Customers` table contains customer-level information.
 
 This table supports customer segmentation and customer-level analysis.
 
+![Retail Sales Analytics Dashboard](Images/TASK4.png)
+
 ---
 
 ## 3. Products

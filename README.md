@@ -1,6 +1,4 @@
-Absolutely. Your README is already structured well. Below is a **more polished, professional, detailed GitHub-ready version** while keeping your original technical content and project scope intact.
-
-# Retail Sales Analytics Dashboard using Excel Power Pivot & DAX
+# Retail Sales Analytics Dashboard using Excel Power Pivot & DAX & Dashboard
 
 ## 📊 Project Overview
 

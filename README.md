@@ -461,6 +461,9 @@ Power Pivot Data Model
 
 ![PivotTables](Images/TASK11.png)
 
+
+![PivotTables](Images/TASK12.png)
+
 ---
 
 # 📌 Dashboard KPIs

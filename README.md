@@ -2,14 +2,26 @@
 
 ## 📊 Project Overview
 
-The **Retail Sales Analytics Dashboard** is an interactive Business Intelligence project developed using **Microsoft Excel, Power Pivot, DAX, PivotTables, PivotCharts, and Slicers**.
+The **Retail Sales Analytics Dashboard** is an interactive Business Intelligence project developed using **Microsoft Excel, Power Query, Power Pivot, DAX, PivotTables, PivotCharts, and Slicers**.
 
-The project focuses on transforming raw retail transaction data into meaningful business insights through a structured **Star Schema data model** and analytical DAX measures.
+The purpose of this project is to transform raw retail transaction data into meaningful and actionable business insights using a structured **Star Schema Data Model**.
 
-The dashboard provides a centralized view of important business metrics such as **Revenue, Profit, Profit Margin, Orders, Revenue per Customer, Brand Performance, Channel Performance, Store Performance, Category Profitability, Shipping Performance, and Monthly Revenue Trends**.
+The dashboard provides a centralized view of:
 
-The solution is designed to help business users quickly identify performance trends, compare business segments, and make data-driven decisions.
+* Revenue
+* Profit
+* Profit Margin
+* Orders
+* Revenue per Customer
+* Brand Performance
+* Category Performance
+* Channel Performance
+* Store Performance
+* Geographic Performance
+* Shipping Performance
+* Monthly Revenue Trends
 
+The interactive dashboard enables business users to explore different aspects of retail performance, identify trends, compare business segments, and support data-driven decision-making.
 
 ![PROJECT OVERVIEW](Images/TASK1.png)
 
@@ -17,21 +29,26 @@ The solution is designed to help business users quickly identify performance tre
 
 # 🎯 Business Problem
 
-Retail organizations generate large amounts of transactional data across customers, products, stores, and multiple sales channels. Without an effective analytical system, extracting useful insights from this data can be time-consuming.
+Retail businesses generate large amounts of transactional data from multiple customers, products, stores, locations, and sales channels.
 
-This project addresses the following business requirements:
+Analyzing this information manually can be time-consuming and makes it difficult to identify important business trends.
 
-* Monitor overall sales and revenue performance.
-* Track total profit and profitability.
+This project was developed to solve these challenges by creating an interactive analytical reporting solution.
+
+### Key Business Requirements
+
+* Monitor overall sales performance.
+* Track revenue and profitability.
 * Measure profit margins.
 * Analyze customer purchasing behavior.
-* Compare performance across sales channels.
+* Compare sales channels.
 * Identify high-performing brands.
-* Identify high-performing stores and cities.
+* Identify top-performing stores and cities.
 * Analyze category-level profitability.
 * Evaluate shipping-mode performance.
 * Track monthly revenue trends.
-* Provide an interactive and user-friendly reporting solution.
+* Provide interactive filtering.
+* Enable faster and more informed business decisions.
 
 ---
 
@@ -46,7 +63,7 @@ The project uses a retail sales dataset containing approximately:
 * Multiple Store Locations
 * Multiple Sales Channels
 
-The dataset is organized into separate fact and dimension tables to support efficient analytical processing.
+The dataset is divided into fact and dimension tables to create a structured analytical environment.
 
 ---
 
@@ -54,7 +71,7 @@ The dataset is organized into separate fact and dimension tables to support effi
 
 ## 1. Sales_Fact
 
-The `Sales_Fact` table is the central **transaction/fact table** containing individual sales records.
+The `Sales_Fact` table is the central **Fact Table** containing individual retail sales transactions.
 
 ### Key Fields
 
@@ -71,9 +88,9 @@ The `Sales_Fact` table is the central **transaction/fact table** containing indi
 * `COGS`
 * `Profit`
 
-This table provides the numerical measures required for revenue, profit, order, and sales analysis.
+The table provides the numerical data required for revenue, sales, order, quantity, and profitability analysis.
 
-![S](Images/TASK7.png)
+![Sales Fact](Images/TASK7.png)
 
 ---
 
@@ -93,15 +110,15 @@ The `Customers` table contains customer-level information.
 * `PreferredChannel`
 * `IsActive`
 
-This table supports customer segmentation and customer-level analysis.
+This table supports customer segmentation, customer behavior, and channel-preference analysis.
 
-![C](Images/TASK4.png)
+![Customers](Images/TASK4.png)
 
 ---
 
 ## 3. Products
 
-The `Products` table contains product-related information.
+The `Products` table contains information about products and their classifications.
 
 ### Key Fields
 
@@ -110,17 +127,15 @@ The `Products` table contains product-related information.
 * `Brand`
 * `Category`
 
+This table enables analysis of revenue and profitability across products, brands, and categories.
 
-It enables analysis of revenue and profitability by product, brand, and category.
-
-![C](Images/TASK6.png)
+![Products](Images/TASK6.png)
 
 ---
 
-
 ## 4. Stores
 
-The `Stores` table contains information about stores and their associated channels.
+The `Stores` table contains information about stores and their sales channels.
 
 ### Key Fields
 
@@ -129,9 +144,9 @@ The `Stores` table contains information about stores and their associated channe
 * `City`
 * `Channel`
 
-This table is used for geographical and store/channel performance analysis.
+This table supports store-level, city-level, geographical, and channel analysis.
 
-![C](Images/TASK5.png)
+![Stores](Images/TASK5.png)
 
 ---
 
@@ -146,15 +161,96 @@ The `Date` table is the dedicated **Date Dimension** used for time-based analysi
 * `Quarter`
 * `Year`
 
-It enables monthly, quarterly, and yearly trend analysis.
+The Date table enables monthly, quarterly, and yearly analysis.
 
-![C](Images/TASK8.png)
+![Date Table](Images/TASK8.png)
+
+---
+
+# 🔄 Power Query – Data Preparation
+
+**Power Query** was used to import, clean, transform, and prepare the raw data before loading it into the Power Pivot Data Model.
+
+### Data Preparation Process
+
+The following activities were performed:
+
+* Imported the raw retail dataset.
+* Reviewed the structure and quality of the data.
+* Removed unnecessary columns and records.
+* Checked for missing values.
+* Checked for duplicate records.
+* Corrected data types.
+* Standardized categorical fields.
+* Prepared date-related fields.
+* Structured fact and dimension tables.
+* Prepared analysis-ready datasets.
+* Loaded the transformed tables into the Data Model.
+
+### Power Query Workflow
+
+```text
+Raw Data
+   ↓
+Power Query
+   ↓
+Data Cleaning
+   ↓
+Data Transformation
+   ↓
+Data Validation
+   ↓
+Load to Data Model
+```
+
+![Power Query](Images/TASK2.png)
+
+---
+
+# ➕ Adding New Data
+
+The dashboard workflow is designed to allow new sales data to be incorporated into the existing analytical model.
+
+When new transactions become available, the data can be added to the source table while maintaining the same column structure.
+
+### New Data Process
+
+1. Add the new sales records to the source table.
+2. Maintain the existing column structure.
+3. Verify important fields such as `OrderID`, `OrderDateKey`, `CustomerID`, `ProductID`, `StoreID`, `Quantity`, `NetRevenue`, and `Profit`.
+4. Refresh the Power Query connection.
+5. Refresh the Power Pivot Data Model.
+6. Refresh the PivotTables.
+7. Refresh the PivotCharts.
+8. Verify that the dashboard reflects the updated information.
+
+### Data Update Workflow
+
+```text
+New Sales Data
+      ↓
+Source Table
+      ↓
+Power Query Refresh
+      ↓
+Power Pivot Data Model
+      ↓
+DAX Measures
+      ↓
+PivotTables
+      ↓
+PivotCharts
+      ↓
+Dashboard
+```
+
+This makes the reporting solution easier to maintain and update as new transactions become available.
 
 ---
 
 # ⭐ Data Model
 
-A **Star Schema** was implemented using Excel Power Pivot.
+A **Star Schema Data Model** was implemented using **Excel Power Pivot**.
 
 ### Fact Table
 
@@ -173,17 +269,17 @@ Date
 
 ### Model Structure
 
-![MS](Images/TASK9.png)
+![Star Schema Data Model](Images/TASK9.png)
 
-The `Sales_Fact` table acts as the central transaction table, while the dimension tables provide descriptive attributes for filtering and analysis.
+The `Sales_Fact` table acts as the central transaction table, while the dimension tables provide descriptive information used for filtering, grouping, and analysis.
 
-### Benefits of the Data Model
+### Benefits of the Star Schema
 
 * Structured analytical architecture
 * Efficient filtering
-* Improved DAX calculations
+* Better DAX performance
 * Reduced data duplication
-* Better scalability
+* Improved scalability
 * Easier maintenance
 * Simplified reporting
 * Multi-dimensional analysis
@@ -192,7 +288,7 @@ The `Sales_Fact` table acts as the central transaction table, while the dimensio
 
 # 🧮 DAX Measures
 
-DAX (**Data Analysis Expressions**) was used to create reusable business calculations.
+**DAX (Data Analysis Expressions)** was used to create reusable analytical calculations and business KPIs.
 
 ## Revenue Measures
 
@@ -203,7 +299,7 @@ Total Revenue =
 SUM(Sales_Fact[NetRevenue])
 ```
 
-Calculates the total revenue generated from all sales transactions.
+Calculates the total revenue generated from sales transactions.
 
 ### Online Purchase Revenue
 
@@ -231,18 +327,18 @@ Calculates revenue generated through retail stores.
 
 ---
 
-## Order Measures
+# 📦 Order Measures
 
-### Total Orders
+## Total Orders
 
 ```DAX
 Total Orders =
 DISTINCTCOUNT(Sales_Fact[OrderID])
 ```
 
-Counts unique orders in the sales dataset.
+Calculates the number of unique orders.
 
-### Average Order Value
+## Average Order Value
 
 ```DAX
 Average Order Value =
@@ -252,13 +348,13 @@ DIVIDE(
 )
 ```
 
-Measures the average revenue generated per order.
+Calculates the average revenue generated per order.
 
 ---
 
-## Customer Measures
+# 👥 Customer Measures
 
-### Total Customers
+## Total Customers
 
 ```DAX
 Total Customers =
@@ -267,7 +363,7 @@ DISTINCTCOUNT(Customers[CustomerID])
 
 Calculates the number of unique customers.
 
-### Revenue Per Customer
+## Revenue Per Customer
 
 ```DAX
 Revenue Per Customer =
@@ -277,22 +373,22 @@ DIVIDE(
 )
 ```
 
-Measures the average revenue generated per customer.
+Measures the average revenue contribution per customer.
 
 ---
 
-## Profit Measures
+# 💰 Profit Measures
 
-### Total Profit
+## Total Profit
 
 ```DAX
 Total Profit =
 SUM(Sales_Fact[Profit])
 ```
 
-Calculates total profit generated from sales.
+Calculates the total profit generated from sales.
 
-### Profit Margin
+## Profit Margin
 
 ```DAX
 Profit Margin =
@@ -302,13 +398,13 @@ DIVIDE(
 )
 ```
 
-Measures profitability as a percentage of revenue.
+Calculates profit as a percentage of revenue.
 
 ---
 
-## Brand Analysis
+# 🏷️ Brand Analysis
 
-### Pulse Brand Revenue
+## Pulse Brand Revenue
 
 ```DAX
 Pulse Brand Revenue =
@@ -318,14 +414,51 @@ CALCULATE(
 )
 ```
 
-![DAX](Images/TASK10.png)
+Calculates revenue generated specifically by the Pulse brand.
 
+![DAX Measures](Images/TASK10.png)
+
+---
+
+# 📊 PivotTables
+
+**PivotTables** were used as the analytical layer between the Power Pivot Data Model and the final dashboard.
+
+They summarize large amounts of transactional data and make it easier to analyze business performance across different dimensions.
+
+### Major PivotTable Analyses
+
+* Revenue by Brand
+* Revenue by Channel
+* Revenue by Store
+* Revenue by City
+* Profit by Category
+* Profit Margin by Shipping Mode
+* Monthly Revenue
+* Customer Performance
+* Order Performance
+
+### PivotTable Workflow
+
+```text
+Power Pivot Data Model
+          ↓
+      DAX Measures
+          ↓
+       PivotTables
+          ↓
+      PivotCharts
+          ↓
+       Dashboard
+```
+
+![PivotTables](Images/TASK11.png)
 
 ---
 
 # 📌 Dashboard KPIs
 
-The dashboard provides a set of high-level KPIs for quick business monitoring.
+The dashboard provides high-level KPIs for quick business performance monitoring.
 
 | KPI                         | Business Purpose                               |
 | --------------------------- | ---------------------------------------------- |
@@ -338,9 +471,9 @@ The dashboard provides a set of high-level KPIs for quick business monitoring.
 | **Retail Revenue**          | Measures retail channel contribution           |
 | **Brand Revenue**           | Measures revenue generated by brands           |
 
-These KPI cards provide management with an immediate overview of business performance.
+These KPI cards provide management with a quick overview of the overall business performance.
 
-![DAX](Images/TASK16.png)
+![Dashboard KPIs](Images/TASK16.png)
 
 ---
 
@@ -355,32 +488,32 @@ It helps identify:
 * Leading brands
 * Revenue contribution
 * Brand-level performance
-* Potential growth opportunities
+* Growth opportunities
 
 ---
 
 ## 2. Channel-wise Revenue Analysis
 
-This visualization compares revenue performance across different sales channels, including:
+This visualization compares revenue across different sales channels, including:
 
 * Retail
 * Online Hub
 * B2B Desk
 
-The analysis helps understand the contribution of different channels and supports channel-specific business strategies.
+It helps understand the contribution of different channels and supports channel-specific strategies.
 
 ---
 
 ## 3. Top Performing Stores by City
 
-This visualization identifies the stores and cities contributing the highest revenue.
+This visualization identifies stores and cities contributing the highest revenue.
 
-It helps businesses understand:
+It helps analyze:
 
 * Regional performance
 * Store productivity
 * High-performing markets
-* Potential expansion opportunities
+* Expansion opportunities
 
 ---
 
@@ -392,8 +525,8 @@ It helps identify:
 
 * Most profitable categories
 * Lower-performing categories
-* Category contribution to total profit
-* Opportunities for product strategy optimization
+* Category contribution
+* Product strategy opportunities
 
 ---
 
@@ -401,13 +534,13 @@ It helps identify:
 
 This chart compares profit margins across different shipping methods.
 
-It helps evaluate the relationship between logistics choices and profitability.
+It helps evaluate the relationship between shipping operations and business profitability.
 
 ---
 
 ## 6. Monthly Revenue Trend
 
-The monthly revenue trend tracks revenue performance over time.
+The monthly revenue trend tracks revenue performance throughout the year.
 
 It helps identify:
 
@@ -417,15 +550,13 @@ It helps identify:
 * High-performing periods
 * Low-performing periods
 
-This information can support sales forecasting, inventory planning, and promotional strategies.
+![Dashboard Visualizations](Images/TASK18.png)
 
 ---
 
-![DAX](Images/TASK18.png)
-
 # 🎛️ Interactive Dashboard Features
 
-The dashboard is designed as an interactive analytical reporting system.
+The dashboard provides an interactive analytical experience using Excel Slicers.
 
 ## Slicers
 
@@ -437,27 +568,28 @@ Users can dynamically filter the dashboard using:
 * **Category**
 * **Sub-category**
 
-  ![sl](Images/TASK17.png)
-
-When a slicer selection is made, the connected PivotTables, PivotCharts, and KPI calculations update according to the selected context.
+When a slicer selection is made, connected PivotTables, PivotCharts, and KPIs update according to the selected filters.
 
 This allows users to perform both high-level and detailed analysis without manually modifying the underlying dataset.
+
+![Interactive Slicers](Images/TASK17.png)
 
 ---
 
 # 💡 Key Business Insights
 
-The dashboard provides several useful business insights:
+The dashboard provides several important business insights:
 
 * Approximately **20,000 transactions** are included in the analysis.
-* The business generated approximately **₹15.96 million in revenue** based on the underlying dataset values.
+* The underlying dataset generated approximately **₹15.96 million in revenue**.
 * Overall **profit margin is approximately 22.15%**.
 * **Electronics** is one of the strongest profit-generating categories.
-* The **Retail channel** contributes significant revenue compared with individual online channels.
-* Revenue performance varies across cities and stores.
+* The **Retail channel** contributes significant revenue.
+* Revenue performance varies across different cities and stores.
 * Certain locations contribute substantially more revenue than others.
-* Monthly revenue analysis highlights fluctuations and high-sales periods.
-* Brand-level analysis helps identify high-performing brands and potential growth opportunities.
+* Monthly revenue shows fluctuations across different periods.
+* Brand-level analysis helps identify high-performing brands.
+* Channel and geographic analysis can support strategic sales planning.
 
 ---
 
@@ -466,28 +598,30 @@ The dashboard provides several useful business insights:
 The project was developed using:
 
 * **Microsoft Excel**
-* **Power Query**
-* **Power Pivot**
-* **DAX**
-* **PivotTables**
-* **PivotCharts**
-* **Slicers**
-* **Data Modeling**
-* **Star Schema**
+* **Power Query** – Data import, cleaning, and transformation
+* **Power Pivot** – Data modeling and relationship management
+* **DAX** – Analytical calculations and KPIs
+* **PivotTables** – Data summarization and analysis
+* **PivotCharts** – Data visualization
+* **Slicers** – Interactive filtering
+* **Star Schema** – Analytical data architecture
 
 ---
 
 # 🧠 Skills Demonstrated
 
-This project demonstrates practical experience in:
+This project demonstrates practical skills in:
 
 * Data Cleaning
 * Data Transformation
+* Power Query
 * Data Modeling
 * Star Schema Design
 * Power Pivot
 * DAX Calculations
 * KPI Development
+* PivotTable Analysis
+* PivotChart Development
 * Business Intelligence
 * Sales Analytics
 * Customer Analysis
@@ -502,7 +636,7 @@ This project demonstrates practical experience in:
 
 # 📊 Business Value
 
-The dashboard delivers business value in four major areas:
+The dashboard provides business value in four major areas:
 
 ### 1. Performance Tracking
 
@@ -524,11 +658,11 @@ Supports sales planning, marketing decisions, inventory planning, channel strate
 
 # 📸 Dashboard Preview
 
-
-
 ![Retail Sales Analytics Dashboard](Images/TASK13.png)
 
+The final dashboard combines KPI cards, analytical charts, interactive slicers, and business performance indicators into a single reporting interface.
 
+---
 
 # 🎥 Demo Video
 
@@ -538,85 +672,136 @@ A project demonstration video can be added here:
 [▶ Watch Retail Sales Analytics Dashboard Demo](YOUR_VIDEO_LINK)
 ```
 
-The demonstration should cover:
+### Demo Covers
 
-1. Dashboard introduction
-2. KPI overview
-3. Brand revenue analysis
-4. Channel analysis
-5. Store/city performance
-6. Category profitability
-7. Shipping-mode analysis
-8. Monthly revenue trend
-9. Interactive slicers
-10. Key business insights
+1. Project introduction
+2. Dataset structure
+3. Power Query data preparation
+4. Power Pivot Data Model
+5. DAX measures
+6. PivotTables
+7. KPI cards
+8. Revenue analysis
+9. Profit analysis
+10. Brand analysis
+11. Channel analysis
+12. Store and city analysis
+13. Monthly revenue trend
+14. Interactive slicers
+15. Business insights
 
 ---
 
 # 📂 Workbook Structure
 
-| Worksheet       | Purpose                                 |
-| --------------- | --------------------------------------- |
-| **Customers**   | Customer information                    |
-| **Products**    | Product, brand and category information |
-| **Stores**      | Store, city and channel information     |
-| **Sales_Fact**  | Central transaction/fact table          |
-| **Date**        | Date dimension for time analysis        |
-| **PIVOT Table** | Analytical PivotTables                  |
-| **DASHBOARD**   | Final interactive dashboard             |
+| Worksheet       | Purpose                                  |
+| --------------- | ---------------------------------------- |
+| **Customers**   | Customer information                     |
+| **Products**    | Product, brand, and category information |
+| **Stores**      | Store, city, and channel information     |
+| **Sales_Fact**  | Central transaction/fact table           |
+| **Date**        | Date dimension for time analysis         |
+| **PIVOT Table** | Analytical PivotTables                   |
+| **DASHBOARD**   | Final interactive dashboard              |
 
 ---
 
 # ▶️ How to Use
 
-### Step 1
+### Step 1 — Open the Workbook
 
-Download or open the Excel workbook.
+Open the Excel `.xlsm` workbook in Microsoft Excel.
 
-### Step 2
+### Step 2 — Enable Content
 
-Open the `.xlsm` file in Microsoft Excel.
+If Excel displays a security notification, enable the required content/macros.
 
-### Step 3
-
-Enable macros/content if Excel displays a security notification.
-
-### Step 4
+### Step 3 — Open Dashboard
 
 Navigate to the **DASHBOARD** worksheet.
 
-### Step 5
+### Step 4 — Review KPIs
 
-Review the KPI cards and visualizations.
+Review the KPI cards to understand overall business performance.
 
-### Step 6
+### Step 5 — Explore Visualizations
 
-Use the available slicers to filter the analysis by:
+Analyze revenue, profit, brands, categories, channels, stores, shipping modes, and monthly trends.
+
+### Step 6 — Apply Slicers
+
+Use the available slicers to filter the dashboard by:
 
 * Channel
-* Month
 * Brand
+* State
+* Category
+* Sub-category
 
-### Step 7
+### Step 7 — Refresh Data
 
-Observe how the dashboard responds to different selections.
+When new data is added, refresh:
 
-### Step 8
+```text
+Power Query
+      ↓
+Power Pivot
+      ↓
+PivotTables
+      ↓
+PivotCharts
+      ↓
+Dashboard
+```
 
-Clear the filters to return to the overall business view.
+### Step 8 — Clear Filters
+
+Clear the slicers to return to the overall business view.
+
+---
+
+# 🔄 Complete Project Workflow
+
+The complete analytics workflow used in this project is:
+
+```text
+Raw Retail Data
+       ↓
+   Power Query
+       ↓
+Data Cleaning & Transformation
+       ↓
+   Power Pivot
+       ↓
+   Star Schema
+       ↓
+      DAX
+       ↓
+   PivotTables
+       ↓
+   PivotCharts
+       ↓
+     Slicers
+       ↓
+Interactive Dashboard
+       ↓
+ Business Insights
+```
+
+This workflow demonstrates the complete process of converting raw transactional data into an interactive Business Intelligence solution.
 
 ---
 
 # 🚀 Future Improvements
 
-The project can be further enhanced by implementing:
+The dashboard can be further enhanced with:
 
 * Automated data refresh
 * Sales forecasting
 * Revenue prediction
 * Customer segmentation
 * Customer Lifetime Value analysis
-* Product-level recommendations
+* Product recommendations
 * Return-rate analysis
 * Inventory analytics
 * Advanced geographic analysis
@@ -628,17 +813,38 @@ The project can be further enhanced by implementing:
 
 # 🏆 Project Outcome
 
-The project successfully demonstrates the complete journey from **raw retail transaction data to an interactive Business Intelligence dashboard**.
+The project successfully demonstrates how **Microsoft Excel can be used as a Business Intelligence platform** to transform raw retail transaction data into an interactive analytical solution.
 
-The combination of **Power Query, Power Pivot, DAX, Star Schema modeling, PivotTables, PivotCharts, and Slicers** enables the dashboard to transform complex transactional information into clear and actionable business insights.
+By combining **Power Query, Power Pivot, Star Schema modeling, DAX, PivotTables, PivotCharts, and Slicers**, the project provides a complete workflow for data preparation, modeling, analysis, visualization, and business reporting.
 
-The final solution provides decision-makers with a consolidated view of **sales performance, profitability, customer behavior, brand performance, channel performance, store performance, geographic trends, shipping profitability, and monthly revenue patterns**.
+The final dashboard enables users to monitor **sales, revenue, profit, customers, brands, categories, channels, stores, geography, shipping performance, and monthly trends** in a single interactive environment.
 
 ---
 
+# ⭐ Project Summary
 
-## ⭐ Project Summary
+```text
+Raw Data
+   ↓
+Power Query
+   ↓
+Data Cleaning & Transformation
+   ↓
+Power Pivot
+   ↓
+Star Schema
+   ↓
+DAX Measures
+   ↓
+PivotTables
+   ↓
+PivotCharts
+   ↓
+Slicers
+   ↓
+Interactive Dashboard
+   ↓
+Business Insights
+```
 
-> **Raw Data → Power Query → Data Model → Power Pivot → DAX → PivotTables → Dashboard → Business Insights**
-
-This project demonstrates how **Microsoft Excel can be used as a powerful Business Intelligence and Data Analytics platform** for transforming transactional retail data into an interactive decision-support solution.
+> **From Raw Retail Data to Business Intelligence — using Excel Power Query, Power Pivot, DAX, PivotTables, and Interactive Dashboarding.**

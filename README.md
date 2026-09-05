@@ -10,6 +10,9 @@ The dashboard provides a centralized view of important business metrics such as 
 
 The solution is designed to help business users quickly identify performance trends, compare business segments, and make data-driven decisions.
 
+
+![PROJECT OVERVIEW](Images/TASK1.png)
+
 ---
 
 # 🎯 Business Problem

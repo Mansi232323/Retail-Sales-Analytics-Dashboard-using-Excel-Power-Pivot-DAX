@@ -682,9 +682,9 @@ The final dashboard combines KPI cards, analytical charts, interactive slicers, 
 
 A project demonstration video can be added here:
 
-```markdown
-[▶ Watch Retail Sales Analytics Dashboard Demo](YOUR_VIDEO_LINK)
-```
+
+[▶ Watch Retail Sales Analytics Dashboard Demo](https://drive.google.com/file/d/1n8oPdrhBc32Ng3Tp_CVShR__G-DoKwEb/view?usp=sharing)
+
 
 ---
 
